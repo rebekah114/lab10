@@ -1,0 +1,14 @@
+<div class="section">
+    <table class="table table-striped">
+      <tr>
+        <th>Title</th>
+        <th> Year</th>
+      </tr>
+      <tr *ngFor="let item of moviesDB">
+        <td>{{item.title}}</td>
+        <td>{{item.year}}</td>
+        <!-- <td>{{}}</td> -->
+      </tr>
+    </table>
+  </div>
+<!--SPA very responsive, difiicult for 3rd party crawlers, ananlytics can be done in backend-->

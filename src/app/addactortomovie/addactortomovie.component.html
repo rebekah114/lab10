@@ -1,0 +1,48 @@
+<div class="section" >
+    <h3>Actors List</h3>
+  <table class="table table-striped">
+    <tr>
+      <th>ID</th>
+      <th>Name</th>
+      <th>Birth Year</th>
+      <th>Select!</th>
+    </tr>
+    <tr *ngFor="let actor of actorsDB">
+      <td>{{actor._id}}</td>
+      <td>{{actor.name}}</td>
+      <td>{{actor.bYear}}</td>
+      <td><button type="submit" class="btn btn-primary" (click)="selectActor(actor)">Select</button></td>
+    </tr>                                                      
+</table>
+
+    <h3>Movies List</h3>
+     <table class="table table-striped">
+    <tr>
+       <td>ID</td> 
+      <th>Title</th>
+      <th>Year</th>
+      <!-- <th>Actors</th> -->
+      <!--CHECK?-->
+      <th>Select!</th>
+    </tr>
+    <tr *ngFor="let movie of moviesDB">
+      <td>{{movie._id}}</td> 
+      <td>{{movie.title}}</td>
+      <td>{{movie.year}}</td>
+      <!-- <td>{{movie.actors[0].name}}</td>     -->
+      <!--CHECK?-->
+      <td><button type="submit" class="btn btn-primary" (click)="selectMovie(movie)">Select</button></td><!--FIX do i then need to pass to items to the method om .ts-->
+  </tr>
+</table><!--FIX-->
+  
+    <div class="form-group">
+      <label for="actorId">Actor Id</label>
+      <input type="text" class="form-control" id="actorId" [(ngModel)]="actorId">
+    </div>
+    <div class="form-group">
+      <label for="movieId">Movie Id</label>
+      <input type="text" class="form-control" id="movieId" [(ngModel)]="movieId">
+    </div>
+    <button type="submit" class="btn btn-primary" (click)="addActors()">Add Actors</button>
+  </div>
+
